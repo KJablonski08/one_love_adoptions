@@ -1,0 +1,33 @@
+Website: https://riversidepet.com/adoptions/dogs/
+
+CLI PLAN 
+
+"Welcome to One Love Pet Adoptions"
+
+"One Love is an adoption center in Scottsville NY dedicated to placing homeless pets with loving families. These dogs and cats come to us from overcrowded shelters across the country as part of an effort to reduce the 1.5 million pets that are euthanized in shelters every year in this country."
+
+List Available Dogs:
+
+#scrape individual dogs 
+
+1. Name - Breed - Age 
+2. Name - Breed - Age 
+3...
+
+Which pet would you like to see more infomation on? 
+
+#Asks for user input (must be index number) 
+#scrape info from pet page about individual pet 
+#Returns more info about the chosen pet : 
+
+Sex: M or F 
+Personality: ...
+Energy Level: ... 
+Additional Notes: ...
+
+Would you like to see information on another pet?
+
+#Ask for user input - yes or no 
+
+exit 
+

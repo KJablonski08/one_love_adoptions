@@ -1,0 +1,3 @@
+class CatScraper
+  
+end 
