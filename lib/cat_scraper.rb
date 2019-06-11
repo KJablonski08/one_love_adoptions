@@ -7,14 +7,13 @@ class CatScraper
   end
   
   def self.scrape_cats
+     get_page.css("div.pet-loop-box a").map {|a| a["href"]}
+  end 
+  
+  def self.make_cats 
     cats = []
-    
-    #url will return an array of urls for each cat from cats adoption page 
-    #each_cat will iterate over each url to get info we need for each cat 
-    
-    url = get_page.css("div.pet-loop-box a").map {|a| a["href"]}
-    each_cat = url.map {|a| Nokogiri::HTML(open(a))}
-    each_cat.map do |pet|
+    each_url = scrape_cats.map {|a| Nokogiri::HTML(open(a))}
+    each_url.map do |pet|
       cat = Cat.new
       cat.name = pet.css("h2.pet-name").text 
       cat.breed = pet.css("p.pet-breed").text 
@@ -25,7 +24,6 @@ class CatScraper
       cats << {:name => cat.name, :breed => cat.breed, :age => cat.age, :sex => cat.sex, :desc =>cat.desc}
     end 
     cats  
-    binding.pry
   end 
   
 end 
