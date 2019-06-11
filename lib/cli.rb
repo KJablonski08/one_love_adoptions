@@ -1,9 +1,13 @@
 class CLI 
   
   def run
-    self.greeting
     DogScraper.scrape_dogs 
-    #self.list_dogs 
+    CatScraper.scrape_cats
+    
+    #potential to refactor and sub a scraper class to scrape all pets at the same time? 
+    
+    self.greeting
+    
   end 
   
   def greeting 

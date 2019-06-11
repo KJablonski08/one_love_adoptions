@@ -1,6 +1,4 @@
-class DogScraper
-  
-  BASE_URL = "https://riversidepet.com/adoptions/dogs/"
+BASE_URL = "https://riversidepet.com/adoptions/dogs/"
   
   def self.get_page 
     doc = Nokogiri::HTML(open(BASE_URL))
@@ -25,6 +23,9 @@ class DogScraper
       dogs << {:name => dog.name, :breed => dog.breed, :age => dog.age, :sex => dog.sex, :desc => dog.desc}
     end 
     dogs 
+    binding.pry 
   end 
+  
+  
   
 end 
