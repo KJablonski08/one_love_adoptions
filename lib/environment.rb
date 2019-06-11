@@ -1,4 +1,4 @@
-require "one_love_adoptions/version"
+require_relative "./one_love_adoptions/version"
 
 module OneLoveAdoptions
   class Error < StandardError; end
