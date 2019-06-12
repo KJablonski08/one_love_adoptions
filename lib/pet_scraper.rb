@@ -33,4 +33,9 @@ class PetScraper
     cats 
   end 
   
+  def self.make_pets 
+    self.make_cats
+    self.make_dogs
+  end 
+  
 end 
