@@ -24,7 +24,6 @@ class DogScraper
       dogs << {:name => dog.name, :breed => dog.breed, :age => dog.age, :sex => dog.sex, :desc => dog.desc}
     end 
     dogs 
-    binding.pry
   end 
   
 end 

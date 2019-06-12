@@ -10,6 +10,7 @@ require_relative './dog.rb'
 require_relative './dog_scraper.rb'
 require_relative './cat_scraper.rb'
 require_relative './cat.rb'
+require_relative './pet_scraper.rb'
 
 require 'pry'
 require 'nokogiri'

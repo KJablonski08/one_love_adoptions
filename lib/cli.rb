@@ -1,8 +1,8 @@
 class CLI 
   
   def run
-    DogScraper.make_dogs 
-    CatScraper.make_cats 
+    PetScraper.make_dogs 
+    PetScraper.make_cats 
     
     #potential to refactor and sub a scraper class to scrape all pets at the same time? 
     

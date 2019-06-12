@@ -1,15 +1,12 @@
 class Cat 
   
-  attr_accessor :name, :breed, :age, :sex, :desc
+  attr_accessor :name, :url 
   
   @@all = []
   
-  def initialize(name = nil, breed = nil, age = nil, sex = nil, desc = nil)
+  def initialize(name = nil, url = nil)
     @name = name 
-    @breed = breed 
-    @age = age 
-    @sex = sex 
-    @desc = desc 
+    @url = url 
     @@all << self 
   end 
   
