@@ -32,8 +32,10 @@ class CLI
     cats.each.with_index(1) do |cat, index|
       name = cat.name 
       url = cat.url
-      puts "#{index}. #{name} | #{url}\n"
+      breed = cat.breed 
+      puts "#{index}. #{name} | #{breed} | #{url}\n"
     end
+    cat_selection
   end 
   
   def list_dogs
@@ -41,12 +43,47 @@ class CLI
     dogs = Dog.all
     dogs.each.with_index(1) do |dog, index|
       name = dog.name 
+      breed = dog.breed 
       url = dog.url
-      puts "#{index}. #{name} | #{url}\n"
+      puts "#{index}. #{name} | #{breed} | #{url}\n"
     end
+    dog_selection
+  end 
+  
+  def cat_selection
+    puts "\nWhich pet would you like more information on?:\n"
+    input = gets.strip.to_i
+    chosen_cat = Cat.find(input)
+    print_chosen_cat(chosen_cat)
+  end 
+  
+  def dog_selection
+    puts "\nWhich pet would you like more information on?:\n"
+    input = gets.strip.to_i
+    chosen_dog = Dog.find(input)
+    print_chosen_dog(chosen_dog)
+  end 
+  
+  def print_chosen_dog(chosen_dog)
+    puts "\nName:  #{chosen_dog.name}"
+    puts "Breed:  #{chosen_dog.breed}" 
+    puts "Sex: #{chosen_dog.sex}"
+    puts "Age:  #{chosen_dog.age}"
+    puts "Weight:  #{chosen_dog.weight}"
+    #puts "Additional Notes:\n#{chosen_dog.desc}"
+  end 
+  
+  def print_chosen_cat(chosen_cat)
+    puts "\nName:  #{chosen_cat.name}"
+    puts "Breed:  #{chosen_cat.breed}" 
+    puts "Sex: #{chosen_cat.sex}"
+    puts "Age:  #{chosen_cat.age}"
+    puts "Weight:  #{chosen_cat.weight}"
+    #puts "Additional Notes:\n#{chosen_dog.desc}"
   end 
   
   def menu 
+    
   end 
   
 end 
