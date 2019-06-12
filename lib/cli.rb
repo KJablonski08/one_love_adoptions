@@ -4,7 +4,7 @@ class CLI
     PetScraper.make_pets 
     self.greeting
     self.dog_or_cat 
-    
+    self.menu 
   end 
   
   def greeting 
@@ -58,7 +58,7 @@ class CLI
   end 
   
   def dog_selection
-    puts "\nWhich pet would you like more information on?:\n"
+    puts "\nWhich pet would you like to get to know better?:\n"
     input = gets.strip.to_i
     chosen_dog = Dog.find(input)
     print_chosen_dog(chosen_dog)
@@ -83,7 +83,19 @@ class CLI
   end 
   
   def menu 
+    puts "\nWould you like to see another pet?\n"
     
+    input = gets.strip.downcase  
+      if input == "yes"
+        dog_or_cat
+      elsif input == "no"
+        puts "\nThank you for visiting!\n"
+        exit 
+      else 
+        puts "\nI don't understand your selection.\n"
+        menu 
+      end 
+    menu 
   end 
   
 end 
