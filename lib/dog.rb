@@ -1,6 +1,6 @@
 class Dog 
   
-  attr_accessor :name, :url, :breed, :sex, :age, :weight 
+  attr_accessor :name, :url, :breed, :sex, :age, :weight, :description 
   
   @@all = []
   
@@ -36,6 +36,10 @@ class Dog
   
   def weight 
     @weight ||= doc.css("p.pet-weight").text.strip 
+  end 
+  
+  def description 
+    @description ||= doc.css("div.pet-desc p")[-1].text.strip
   end 
   
 end 

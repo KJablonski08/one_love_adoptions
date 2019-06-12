@@ -38,4 +38,8 @@ class Cat
     @weight ||= doc.css("p.pet-weight").text.strip 
   end 
   
+   def description 
+    @description ||= doc.css("div.pet-desc p")[-1].text.strip
+  end 
+  
 end 

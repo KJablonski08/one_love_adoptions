@@ -53,8 +53,12 @@ class CLI
   def cat_selection
     puts "\nWhich pet would you like more information on?:\n"
     input = gets.strip.to_i
-    chosen_cat = Cat.find(input)
-    print_chosen_cat(chosen_cat)
+      #if input == 1..(index-1)
+        chosen_cat = Cat.find(input)
+        print_chosen_cat(chosen_cat)
+      #else 
+       #puts "I don't understand your selection. Please enter a valid number."
+      #end 
   end 
   
   def dog_selection
@@ -70,7 +74,7 @@ class CLI
     puts "Sex: #{chosen_dog.sex}"
     puts "Age:  #{chosen_dog.age}"
     puts "Weight:  #{chosen_dog.weight}"
-    #puts "Additional Notes:\n#{chosen_dog.desc}"
+    puts "Additional Notes:\n#{chosen_dog.description}"
   end 
   
   def print_chosen_cat(chosen_cat)
@@ -79,7 +83,7 @@ class CLI
     puts "Sex: #{chosen_cat.sex}"
     puts "Age:  #{chosen_cat.age}"
     puts "Weight:  #{chosen_cat.weight}"
-    #puts "Additional Notes:\n#{chosen_dog.desc}"
+    puts "Additional Notes:\n#{chosen_cat.description}"
   end 
   
   def menu 
