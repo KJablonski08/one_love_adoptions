@@ -1,16 +1,12 @@
 # OneLoveAdoptions
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/one_love_adoptions`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+One Love Adoptions is a cli that scrapes data on individual cats and dogs from One Love Pet Adoptions in Rochester, NY. It allows users to view a list of available cats or dogs and choose which individual pet to see additional information on. Additional information includes Name, Breed, Sex, Weight and a brief personality description.  
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-```ruby
-gem 'one_love_adoptions'
-```
+```ruby gem 'one_love_adoptions'```
 
 And then execute:
 
@@ -22,7 +18,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Type the code below and follow onscreen instructions to find your next pet:
+
+    $ bin/one_love_adoptions
 
 ## Development
 
