@@ -8,11 +8,13 @@ class CLI
   end 
   
   def greeting 
+    #greets user and gives quick details on One Love Pet Adoptions mission
     puts "\nWelcome to One Love Pet Adoptions!\n"
     puts "\nOne Love is an adoption center in Scottsville NY dedicated to placing homeless\npets with loving families. These dogs and cats come to us from overcrowded\nshelters across the country as part of an effort to reduce the 1.5 million pets that are euthanized in shelters every year in this country.\n\n"
   end 
   
   def dog_or_cat 
+    #user chooses dog or cat 
     puts "\nWould you like to view cats or dogs?"
     puts "(type 'cats' or 'dogs')\n"
     input = gets.strip.downcase 
@@ -27,6 +29,12 @@ class CLI
   end 
     
   def list_cats 
+    
+    #if user picks 'cats' then lists available cats 
+    #pulls available info from all array in Cat object 
+    #scrapes breed info once from individual urls 
+    #'cat name | cat breed | individual cat url'
+    
     puts "\nHere is a list of cats available for adoption:\n\n"
     cats = Cat.all
     cats.each.with_index(1) do |cat, index|
@@ -39,6 +47,12 @@ class CLI
   end 
   
   def list_dogs
+    
+    #if user picks 'dogs' then lists available cats
+    #pulls available info from all array in Dog object
+    #scrapes breed info once from individual urls 
+    #'dog name | dog breed | individual dog url'
+    
     puts "\nHere is a list of dogs available for adoption:\n\n"
     dogs = Dog.all
     dogs.each.with_index(1) do |dog, index|
@@ -51,6 +65,7 @@ class CLI
   end 
   
   def cat_selection
+    #requests number input from user for additional pet info 
     puts "\nWhich pet would you like more information on?:\n"
     input = gets.strip.to_i
       #if input == 1..(index-1)
@@ -62,6 +77,7 @@ class CLI
   end 
   
   def dog_selection
+    #requests number input from user for additional pet info 
     puts "\nWhich pet would you like to get to know better?:\n"
     input = gets.strip.to_i
     chosen_dog = Dog.find(input)
@@ -69,6 +85,7 @@ class CLI
   end 
   
   def print_chosen_dog(chosen_dog)
+    #pulls additional pet info from dog object chosen by index 
     puts "\nName:  #{chosen_dog.name}"
     puts "Breed:  #{chosen_dog.breed}" 
     puts "Sex: #{chosen_dog.sex}"
@@ -78,6 +95,7 @@ class CLI
   end 
   
   def print_chosen_cat(chosen_cat)
+    #pulls additional pet info from cat object chosen by index
     puts "\nName:  #{chosen_cat.name}"
     puts "Breed:  #{chosen_cat.breed}" 
     puts "Sex: #{chosen_cat.sex}"
@@ -87,6 +105,7 @@ class CLI
   end 
   
   def menu 
+    #menu loop - loop until user says 'no' then exit 
     puts "\nWould you like to see another pet?\n"
     
     input = gets.strip.downcase  
