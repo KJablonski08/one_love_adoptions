@@ -67,6 +67,7 @@ class CLI
   def cat_selection
     #requests number input from user for additional pet info 
     puts "\nWhich pet would you like more information on?:\n"
+    puts "(plese type a number for the pet listed)\n"
     input = gets.strip.to_i
       #if input == 1..(index-1)
         chosen_cat = Cat.find(input)
@@ -79,6 +80,7 @@ class CLI
   def dog_selection
     #requests number input from user for additional pet info 
     puts "\nWhich pet would you like to get to know better?:\n"
+    puts "(plese type a number for the pet listed)\n"
     input = gets.strip.to_i
     chosen_dog = Dog.find(input)
     print_chosen_dog(chosen_dog)
