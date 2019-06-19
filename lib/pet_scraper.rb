@@ -37,26 +37,25 @@ class PetScraper
     self.make_dogs
   end 
   
-  def self.add_attributes(chosen_dog) 
+  def self.add_dog_attributes(chosen_dog) 
     
-    #each dog url page - individual url scraped in pet_scraper for each dog object
      doc = Nokogiri::HTML(open(chosen_dog.url))
-    
-    #scrape breed from individual pet page once (if none already assigned)
      chosen_dog.breed = doc.css("p.pet-breed").text.strip
-  
-    #scrape sex from individual pet page once (if none already assigned)
      chosen_dog.sex = doc.css("p.pet-sex").text.strip
-     
-    #scrape age from individual pet page once (if none already assigned)
      chosen_dog.age = doc.css("p.pet-age").text.strip
-  
-    #scrape weight from individual pet page once (if none already assigned)
-    chosen_dog.weight = doc.css("p.pet-weight").text.strip 
-
-    #scrape long description at bottom of the pet page once (if none already assigned)
-    chosen_dog.description = doc.css("div.pet-desc p")[-1].text.strip
+     chosen_dog.weight = doc.css("p.pet-weight").text.strip 
+     chosen_dog.description = doc.css("div.pet-desc p")[-1].text.strip
   end 
   
+  def self.add_cat_attributes(chosen_cat) 
+    
+    doc = Nokogiri::HTML(open(chosen_cat.url))
+    chosen_cat.breed = doc.css("p.pet-breed").text.strip
+    chosen_cat.sex = doc.css("p.pet-sex").text.strip
+    chosen_cat.age = doc.css("p.pet-age").text.strip
+    chosen_cat.weight = doc.css("p.pet-weight").text.strip 
+    chosen_cat.description = doc.css("div.pet-desc p")[-1].text.strip
+    
+  end 
   
 end 

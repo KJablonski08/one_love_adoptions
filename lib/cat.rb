@@ -1,6 +1,6 @@
 class Cat 
   
-  attr_accessor :name, :url, :breed, :sex, :age, :weight 
+  attr_accessor :name, :url, :breed, :sex, :age, :weight, :description 
   
   @@all = []
   
@@ -20,34 +20,8 @@ class Cat
     self.all[index-1]
   end
   
-  def doc
-    #each cat url page - individual url scraped in pet_scraper for each cat object 
-     Nokogiri::HTML(open(self.url))
-  end
-  
   def breed 
-    #scrape breed from individual pet page once (if none already assigned)
-    @breed ||= doc.css("p.pet-breed").text.strip
+    @breed ||= Nokogiri::HTML(open(self.url)).css("p.pet-breed").text.strip
   end
-  
-  def sex 
-    #scrape sex from individual pet page once (if none already assigned)
-    @sex ||= doc.css("p.pet-sex").text.strip
-  end 
-  
-  def age 
-    #scrape age from individual pet page once (if none already assigned)
-    @age ||= doc.css("p.pet-age").text.strip
-  end 
-  
-  def weight 
-    #scrape weight from individual pet page once (if none already assigned)
-    @weight ||= doc.css("p.pet-weight").text.strip 
-  end 
-  
-   def description 
-    #scrape long description at bottom of the pet page once (if none already assigned)
-    @description ||= doc.css("div.pet-desc p")[-1].text.strip
-  end 
   
 end 

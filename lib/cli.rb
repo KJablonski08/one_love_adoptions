@@ -69,12 +69,14 @@ class CLI
     puts "\nWhich pet would you like more information on?:\n"
     puts "(plese type a number for the pet listed)\n"
     input = gets.strip.to_i
-      #if input == 1..(index-1)
+    r = Cat.all.length
+      if input.between?(1, r)
         chosen_cat = Cat.find(input)
         print_chosen_cat(chosen_cat)
-      #else 
-       #puts "I don't understand your selection. Please enter a valid number."
-      #end 
+      else 
+        puts "\nI dont understand your selection. Please enter a valid number from the list."
+        cat_selection
+      end 
   end 
   
   def dog_selection
@@ -82,15 +84,20 @@ class CLI
     puts "\nWhich pet would you like to get to know better?:\n"
     puts "(plese type a number for the pet listed)\n"
     input = gets.strip.to_i
-    chosen_dog = Dog.find(input)
-    print_chosen_dog(chosen_dog)
+    r = Dog.all.length
+      if input.between?(1, r)
+        chosen_dog = Dog.find(input)
+        print_chosen_dog(chosen_dog)
+      else
+        puts "\nI dont understand your selection. Please enter a valid number from the list."
+        dog_selection
+      end 
   end 
   
   def print_chosen_dog(chosen_dog)
     if chosen_dog.sex == nil 
-      PetScraper.add_attributes(chosen_dog)
+      PetScraper.add_dog_attributes(chosen_dog)
     end 
-    #pulls additional pet info from dog object chosen by index 
     puts "\nName:  #{chosen_dog.name}"
     puts "Breed:  #{chosen_dog.breed}" 
     puts "Sex: #{chosen_dog.sex}"
@@ -100,7 +107,9 @@ class CLI
   end 
   
   def print_chosen_cat(chosen_cat)
-    #pulls additional pet info from cat object chosen by index
+    if chosen_cat.sex == nil 
+      PetScraper.add_cat_attributes(chosen_cat)
+    end 
     puts "\nName:  #{chosen_cat.name}"
     puts "Breed:  #{chosen_cat.breed}" 
     puts "Sex: #{chosen_cat.sex}"

@@ -20,5 +20,8 @@ class Dog
     self.all[index-1]
   end
 
+  def breed 
+    @breed ||= Nokogiri::HTML(open(self.url)).css("p.pet-breed").text.strip
+  end
  
 end 
