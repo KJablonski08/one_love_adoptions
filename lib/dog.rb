@@ -22,7 +22,7 @@ class Dog
   
   def doc
     #each dog url page - individual url scraped in pet_scraper for each dog object
-     Nokogiri::HTML(open(self.url))
+     @doc ||= Nokogiri::HTML(open(self.url))
   end
   
   def breed 
