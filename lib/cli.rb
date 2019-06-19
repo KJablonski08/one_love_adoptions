@@ -87,6 +87,9 @@ class CLI
   end 
   
   def print_chosen_dog(chosen_dog)
+    if chosen_dog.sex == nil 
+      PetScraper.add_attributes(chosen_dog)
+    end 
     #pulls additional pet info from dog object chosen by index 
     puts "\nName:  #{chosen_dog.name}"
     puts "Breed:  #{chosen_dog.breed}" 
