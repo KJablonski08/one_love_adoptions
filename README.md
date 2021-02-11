@@ -1,6 +1,6 @@
 # OneLoveAdoptions
 
-One Love Adoptions is a cli that scrapes data on individual cats and dogs from One Love Pet Adoptions in Rochester, NY. It allows users to view a list of available cats or dogs and choose which individual pet to see additional information on. Additional information includes Name, Breed, Sex, Weight and a brief personality description.  
+CLI to scrapes data from One Love Pet Adoptions in Rochester, NY, allowing users to view a list of available cats or dogs and choose which individual pet to see additional information on. Additional information includes Name, Breed, Sex, Weight and a brief personality description.  
 
 ## Installation
 
@@ -30,12 +30,8 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/'modern-revision-2099'/one_love_adoptions. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/KJablonski08/one_love_adoptions. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the OneLoveAdoptions project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/'modern-revision-2099'/one_love_adoptions/blob/master/CODE_OF_CONDUCT.md).
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT)
